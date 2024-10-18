@@ -140,6 +140,23 @@ console.log(isThisAnEmail("Ciao@gmailcom.")); //false
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
 
+const week = [
+  "Lunedì",
+  "Martedì",
+  "Mercledì",
+  "Giovedì",
+  "Venerdì",
+  "Sabato",
+  "Domenica",
+];
+const whatDayIsIt = function () {
+  const now = new Date();
+  const indexWeek = now.getDay;
+  return week[indexWeek];
+};
+
+console.log(whatDayIsIt());
+
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
@@ -152,11 +169,33 @@ console.log(isThisAnEmail("Ciao@gmailcom.")); //false
       values: [3, 3, 4]
   }
 */
+const rollTheDices = function (numberRolls) {
+  const result = {
+    sum: 0,
+    value: [],
+  };
+  for (let i = 0; i < numberRolls; i++) {
+    const roll = dice(); //estraggo un valoe con "dice()""
+    result.value.push(roll); //spingo il valore ottenuto nell'array "value[]"
+    result.sum = roll + i;
+  }
+  return result;
+};
+console.log(rollTheDices());
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
-
+const howManyDays = function (passDate) {
+  //ottenere la data corrente
+  const today = new Date();
+  //la data passata:
+  const past = new Date(passDate);
+  //calcolo la differenza della data passata in millisecondi
+  const differenceInTime = today - past;
+  //convertire i millisecondi in giorni
+  const differenceInDay = math.floor; //non so piu come continuare :,(
+};
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
